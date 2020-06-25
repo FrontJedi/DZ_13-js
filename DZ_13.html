@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DZ_13 Olek</title>
+</head>
+
+<body>
+
+    <script>
+        // Задание 1:
+        // Запросите у пользователе ввести значение;
+        // Введенное значение равно 10, то выведите 'Верно', иначе выведите 'Неверно'.
+
+        let numb = parseInt(prompt('Введите значение'));
+        if (numb === 10) {
+            console.log('Верно');
+        } else {
+            console.log('Неверно');
+        }
+
+
+
+
+        // Задание 2:
+        // Пользователь вводит в текстовое поле имя.Если введенное имя Jonh — то выводится сообщение «Привет Jonh».В противном случае — ничего не выводить.
+
+        let name = prompt('Введите Ваше имя');
+        if (name === 'John') {
+            alert(`Привет ${name}`);
+
+        }
+
+
+
+
+
+        // Задание 3:
+        // Запросите у пользователе ввести значение от 0 до 59;
+        // Определите в какую четверть часа попадает это число(в первую(0 - 15), вторую(15 - 30), третью(30 - 45) или четвертую(45 - 59)).
+
+        let min = parseInt(prompt('Введите значение от 0 до 59'));
+
+        if (min >= 0 && min <= 15) {
+            console.log('Первая четверть часа');
+        }
+        else if (min > 15 && min <= 30) {
+            console.log('Вторая четверть часа');
+        }
+        else if (min > 30 && min <= 45) {
+            console.log('Третья четверть часа');
+        }
+        else if (min > 45 && min <= 59) {
+            console.log('Четвертая четверть часа');
+        }
+
+
+
+
+
+        // Задание 4:
+        // Создайте 2 переменные(a, b);
+        // Если переменная a равна или меньше 1, а переменная b больше или равна 3, то выведите сумму этих переменных, иначе выведите их разность(результат вычитания).
+        // Проверьте работу скрипта при a и b, равном 1 и 3, 0 и 6, 3 и 5.
+
+        let a = parseInt(prompt('Введите число'));
+        let b = parseInt(prompt('Введите число'));
+        let result;
+
+        if (a <= 1 && b >= 3) {
+            result = a + b;
+        }
+        else {
+            result = a - b;
+        }
+        console.log(`Результат чисел ${result}`);
+
+
+
+
+
+        // Задание 5:
+        // Переменная num может принимать 4 значения: 1, 2, 3 или 4. Если она имеет значение '1', то в переменную result запишем 'зима', если имеет значение '2' – 'весна' и так далее.
+        // Решите задачу через switch-case.
+
+        let num = parseInt(prompt('Введите от 1 до 4'));
+        let returnNum;
+
+        switch (num) {
+            case 1: returnNum = 'Зима';
+                break;
+            case 2: returnNum = 'Весна';
+                break;
+            case 3: returnNum = 'Лето';
+                break;
+            case 4: returnNum = 'Осень';
+                break;
+        }
+        console.log(returnNum);
+
+
+
+
+
+        // Задание 6:
+        // Пользователь вводит в имя и — пароль. Если пользователь ввел:
+        // ivan - 333 или
+        // ssss - 666 или
+        // gibs - 0000
+        // То вывести — «Доброе пожаловать», в противном случае: «Пользователь не найден».
+
+        let userName = prompt('Введите Ваше имя');
+        let userPassword = parseInt(prompt('Введите Ваш пароль'));
+        let access;
+
+        if (userName === 'ivan' && userPassword === 333) {
+            access = 'Добро пожаловать';
+        }
+        else if (userName === 'ssss' && userPassword === 666) {
+            access = 'Добро пожаловать';
+        }
+        else if (userName === 'gibs' && userPassword === 0000) {
+            access = 'Добро пожаловать';
+        }
+        else {
+            access = 'Пользователь не найден';
+        }
+        console.log(access);
+
+
+
+
+
+        // Задание 7:
+        // Cоздать программу, которая будет проверять, достиг ли пользователь 21 года.
+        // Если да, программа выведет «You may enter», если нет, она выведет в консоль «You may not enter».Используйте тренарный оператор.
+
+        let userAge = parseInt(prompt('Введите Ваш возраст'));
+        let accessUser = userAge === 21 ? 'You may enter' : 'You may not enter';
+        console.log(accessUser);
+
+
+
+
+
+
+
+        // Задание 8:
+        // Пользователь вводит 3 числа.Найти максимальное.Учесть вариант равенства чисел.
+
+        let number1 = parseInt(prompt('Введите число для нахождения максимального числа'));
+        let number2 = parseInt(prompt('Введите число для нахождения максимального числа'));
+        let number3 = parseInt(prompt('Введите число для нахождения максимального числа'));
+        let max1;
+
+        if (number1 > number2 && number1 > number3) {
+            max1 = number1;
+        }
+        else if (number2 > number1 && number2 > number3) {
+            max1 = number2;
+        }
+        else if (number3 > number1 && number3 > number2) {
+            max1 = number3;
+        }
+        else {
+            max1 = 'Числа равны';
+        }
+        console.log(max1);
+
+
+
+
+
+
+
+
+        // Задание 9:
+        // Пользователь вводит 3 числа.Найти минимальное и максимальное.Учесть вариант равенства чисел.
+
+        let number11 = parseInt(prompt('Введите число для нахождения максимального числа'));
+        let number22 = parseInt(prompt('Введите число для нахождения максимального числа'));
+        let number33 = parseInt(prompt('Введите число для нахождения максимального числа'));
+        let max2;
+
+        if (number11 > number22 && number22 < number33) {
+            max2 = `max ${number}`;
+        }
+        else if (number22 > number11 && number22 > number33) {
+            max2 = number22;
+        }
+        else if (number33 > number11 && number33 > number22) {
+            max2 = number33;
+        }
+        else {
+            max2 = 'Числа равны';
+        }
+        console.log(max2);
+
+
+
+
+
+
+
+        // Задание 10:
+        // Cоздать приложение для выставления оценок и перевода их из 12 бальной в 5 - ти бальную.Приложение должно следовать таким условиям:
+        // 10 и свыше – 5.
+        // 7 - 9 баллов – 4.
+        // 5 - 6 баллов – 3.
+        // 3 - 5 баллов – 2.
+        // 2 бала и ниже – 1.
+        // Перевод дожен учитывать невалидную оценку и выбрасывать оповещение об ошибке.
+
+        let ball12 = parseInt(prompt('Введите оценку по 12 бальной шкале'));
+        let ball5;
+
+        if (ball12 >= 10 && bal12 <= 12) {
+            ball5 = 5;
+        }
+        else if (ball12 >= 7 && ball12 <= 9) {
+            ball5 = 4;
+        }
+        else if (ball12 === 5 || ball12 === 6) {
+            ball5 = 3;
+        }
+        else if (ball12 === 3 && ball12 === 4) {
+            ball5 = 2;
+        }
+        else if (ball12 === 1 || ball12 === 2) {
+            ball5 = 1;
+        }
+        console.log(ball5);
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
