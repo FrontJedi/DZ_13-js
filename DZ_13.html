@@ -138,7 +138,7 @@
         // Если да, программа выведет «You may enter», если нет, она выведет в консоль «You may not enter».Используйте тренарный оператор.
 
         let userAge = parseInt(prompt('Введите Ваш возраст'));
-        let accessUser = userAge === 21 ? 'You may enter' : 'You may not enter';
+        let accessUser = userAge >= 21 ? 'You may enter' : 'You may not enter';
         console.log(accessUser);
 
 
@@ -155,21 +155,19 @@
         let number3 = parseInt(prompt('Введите число для нахождения максимального числа'));
         let max1;
 
-        if (number1 > number2 && number1 > number3) {
+        if (number1 > number2 && number1 > number3 || number1 > number2 && number2 === number3) {
             max1 = number1;
         }
-        else if (number2 > number1 && number2 > number3) {
+        else if (number2 > number1 && number2 > number3 || number2 > number1 && number1 === number3) {
             max1 = number2;
         }
-        else if (number3 > number1 && number3 > number2) {
+        else if (number3 > number1 && number3 > number2 || number3 > number1 && number1 === number2) {
             max1 = number3;
         }
-        else {
+        else if (number1 === number2 && number1 === number3) {
             max1 = 'Числа равны';
         }
-        console.log(max1);
-
-
+        console.log(`max ${max1}`);
 
 
 
@@ -182,21 +180,26 @@
         let number11 = parseInt(prompt('Введите число для нахождения максимального числа'));
         let number22 = parseInt(prompt('Введите число для нахождения максимального числа'));
         let number33 = parseInt(prompt('Введите число для нахождения максимального числа'));
-        let max2;
+        let maxValue;
+        let minValue;
 
-        if (number11 > number22 && number22 < number33) {
-            max2 = `max ${number}`;
+        minValue = number11;
+        if (number22 < minValue) {
+            minValue = number22;
         }
-        else if (number22 > number11 && number22 > number33) {
-            max2 = number22;
+        if (number33 < minValue) {
+            minValue = number33;
         }
-        else if (number33 > number11 && number33 > number22) {
-            max2 = number33;
+        maxValue = number11;
+        if (number22 > maxValue) {
+            maxValue = number22
         }
-        else {
-            max2 = 'Числа равны';
+        if (number33 > maxValue) {
+            maxValue = number33
         }
-        console.log(max2);
+
+        console.log(`Максимальное из введенных чисел  ${maxValue}`);
+        console.log(`Минимальное из введенных чисел  ${minValue}`);
 
 
 
